@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://xjfewefimf4k"]
+
+[ext_resource type="FontFile" uid="uid://m3ruogdrfgbd" path="res://Fonts/PixelOperator8-Bold.ttf" id="1_00ca2"]
+[ext_resource type="FontFile" uid="uid://xhc6py302v3q" path="res://Fonts/PixelOperator8.ttf" id="2_kymob"]
+[ext_resource type="Script" path="res://Scripts/ReplayButton.gd" id="3_a335y"]
+
+[node name="FinishText" type="Label"]
+offset_left = 353.0
+offset_top = 167.0
+offset_right = 825.0
+offset_bottom = 231.0
+theme_override_fonts/font = ExtResource("1_00ca2")
+theme_override_font_sizes/font_size = 64
+text = "YOU WON!"
+
+[node name="ReplayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 134.0
+offset_top = 117.0
+offset_right = 310.0
+offset_bottom = 157.0
+theme_override_fonts/font = ExtResource("2_kymob")
+theme_override_font_sizes/font_size = 32
+text = "REPLAY"
+script = ExtResource("3_a335y")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 189.0
+offset_right = 528.0
+offset_bottom = 212.0
+theme_override_fonts/font = ExtResource("2_kymob")
+text = "(only one level cuz i dont like level design)"
+
+[connection signal="pressed" from="ReplayButton" to="ReplayButton" method="_on_pressed"]

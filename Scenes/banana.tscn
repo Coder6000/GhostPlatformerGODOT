@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://u2xchnkryuwp"]
+
+[ext_resource type="Script" path="res://Scripts/food.gd" id="1_qx6qy"]
+[ext_resource type="Texture2D" uid="uid://ckcvtumdogvxv" path="res://Art/banana.png" id="2_dkrhq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w66n6"]
+size = Vector2(8, 4)
+
+[node name="Banana" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_qx6qy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_dkrhq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_w66n6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

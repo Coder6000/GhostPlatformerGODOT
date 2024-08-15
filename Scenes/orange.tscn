@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxae5pqltbavb"]
+
+[ext_resource type="Script" path="res://Scripts/food.gd" id="1_gst66"]
+[ext_resource type="Texture2D" uid="uid://1rwuc55q2yq" path="res://Art/orange.png" id="1_h8hey"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8cg03"]
+radius = 4.0
+
+[node name="Orange" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_gst66")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_h8hey")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8cg03")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
